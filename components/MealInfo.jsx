@@ -1,34 +1,32 @@
-import {View, Text, StyleSheet} from "react-native";
-import {FontAwesome5} from "@expo/vector-icons";
+import { View, Text, StyleSheet } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 
-export function MealDuration({duration}) {
-    return (
-      <View style={styles.infoContainer}>
-        <FontAwesome5 name="clock" size={20} color="black" />
-        <Text>{duration}m</Text>
-      </View>
-    );
-  }
-  
-export function MealAffordability({affordability}) {
+export function MealDuration({ duration, style }) {
   return (
     <View style={styles.infoContainer}>
-      <FontAwesome5 name="euro-sign" size={20} color="black" />
-      <Text>{affordability}</Text>
+      <FontAwesome5 name="clock" size={20} color="black" style={style} />
+      <Text style={style}>{duration}m</Text>
     </View>
   );
 }
 
-export function MealComplexity({complexity}) {
+export function MealAffordability({ affordability, style }) {
   return (
     <View style={styles.infoContainer}>
-      <FontAwesome5 name="fire" size={20} color="black" />
-      <Text>{complexity}</Text>
+      <FontAwesome5 name="euro-sign" size={20} color="black" style={style} />
+      <Text style={style}>{affordability}</Text>
     </View>
   );
 }
 
-
+export function MealComplexity({ complexity, style }) {
+  return (
+    <View style={styles.infoContainer}>
+      <FontAwesome5 name="fire" size={20} color="black" style={style} />
+      <Text style={style}>{complexity}</Text>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   infoContainer: {
